@@ -6,6 +6,19 @@ import (
 	"strings"
 )
 
+// UrlParts represents the components that make up a VCS url.
+//
+// Example
+//
+// 	separator.SeparateVcsUrl("https://github.com/burtawicz/vcs-url-separator/go.mod")
+// should result in
+// 	UrlParts{
+// 		Provider:       "GitHub",
+//		Organization:   "burtawicz",
+//		Project:        "vcs-url-separator",
+//		SubDirectories: []string{},
+//		FilePath:       "go.mod",
+// 	}
 type UrlParts struct {
 	Provider       string
 	Organization   string
