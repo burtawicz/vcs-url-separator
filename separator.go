@@ -7,18 +7,6 @@ import (
 )
 
 // UrlParts represents the components that make up a VCS url.
-//
-// Example
-//
-// 	separator.SeparateVcsUrl("https://github.com/burtawicz/vcs-url-separator/go.mod")
-// should result in
-// 	UrlParts{
-// 		Provider:       "GitHub",
-//		Organization:   "burtawicz",
-//		Project:        "vcs-url-separator",
-//		SubDirectories: []string{},
-//		FilePath:       "go.mod",
-// 	}
 type UrlParts struct {
 	Provider       string
 	Organization   string
@@ -73,7 +61,18 @@ func matchProvider(providerName string) string {
 }
 
 // SeparateVcsUrl isolates individual components of a VCS url.
-// TODO: add a better function comment.
+//
+// Example
+//
+// 	separator.SeparateVcsUrl("https://github.com/burtawicz/vcs-url-separator/go.mod")
+// should result in
+// 	UrlParts{
+// 		Provider:       "GitHub",
+//		Organization:   "burtawicz",
+//		Project:        "vcs-url-separator",
+//		SubDirectories: []string{},
+//		FilePath:       "go.mod",
+// 	}
 func SeparateVcsUrl(url string) (UrlParts, error) {
 	// verify url is not empty
 	if len(strings.TrimSpace(url)) < 1 {
