@@ -6,7 +6,7 @@
 I find myself needing to split parts of VCS provider URLs on a regular basis. This is a tool to simplify that.
 
 ## :package: Installation
-TBA
+`go get github.com/burtawicz/vcs-url-separator`
 
 ## :bangbang: Usage
 TBA
